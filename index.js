@@ -94,6 +94,11 @@ class Transaction {
       allowZero: true,
       allowLess: true,
       default: new Buffer([])
+    }, {
+      name: 'IsEtherzero',
+      length: 1,
+      allowLess: true,
+      default: new Buffer([])
     }]
 
     /**
