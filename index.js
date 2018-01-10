@@ -46,6 +46,7 @@ const N_DIV_2 = new BN('7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46
 class Transaction {
   constructor (data) {
     data = data || {}
+    if(data.length == 9) data[9] = "0x01"
     // Define Properties
     const fields = [{
       name: 'nonce',
@@ -154,8 +155,6 @@ class Transaction {
     // hash nine elements, with v replaced by CHAIN_ID, r = 0 and s = 0
 
     let items
-    console.log("IsEtherzero = true")
-    this.IsEtherzero = true
     if (includeSignature) {
       items = this.raw
     } else {
