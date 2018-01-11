@@ -46,7 +46,7 @@ const N_DIV_2 = new BN('7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46
 class Transaction {
   constructor (data) {
     data = data || {}
-    if(data.length == 9) data[9] = "0x01"
+    console.log(data)
     // Define Properties
     const fields = [{
       name: 'nonce',
@@ -96,10 +96,9 @@ class Transaction {
       allowLess: true,
       default: new Buffer([])
     }, {
-      name: 'IsEtherzero',
+      name: 'isetherzero',
       length: 1,
-      allowLess: true,
-      default: new Buffer([])
+      default: new Buffer([0x01])
     }]
 
     /**
